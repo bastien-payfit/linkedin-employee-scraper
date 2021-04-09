@@ -92,10 +92,10 @@ def domainsCrawler(dataToScrape, xpaths, targetWriter, credsPath):
         targetWriter.writerow(elem + scraped)
 
 
-def mainCrawler(workFiles, xpaths, batchSize = 10):
+def mainCrawler(workFiles, xpaths, batchSize):
     '''
     When launched, this function resumes the scraping where it stopped. We probably need to scrape a lot of urls but we can only scrape so much in one shot. That's why the scraping has to stop after a few and resume where it stopped afterwards, until the whole list has been scraped.
-    @params: {dict, list, int} the dictionnary with a path to the input csv file with urls to scrape and a path to the file with the linkedin credentials of the account to connect to, the list of xpaths where to get data on each linkedin page and the number of urls to visit in one shot (defaults to 10). Last parameter was designed to not raise linkedin's awareness about our ongoing scraping.
+    @params: {dict, list, int} the dictionnary with a path to the input csv file with urls to scrape and a path to the file with the linkedin credentials of the account to connect to, the list of xpaths where to get data on each linkedin page and the number of urls to visit in one shot. Last parameter was designed to not raise linkedin's awareness about our ongoing scraping.
     @returns {None}
     '''
     sourceFileName = workFiles["source"]
