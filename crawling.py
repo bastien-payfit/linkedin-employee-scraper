@@ -69,20 +69,26 @@ def domainCrawler(driver, url, xpaths):
     print(f"result {res}")
     return res
 
-def domainsCrawler(dataToScrape, xpaths, targetWriter, credsPath):
+def domainsCrawler(dataToScrape, xpaths, targetWriter, workFiles):
     '''
     This function scrapes multiple linkedin urls to find the number of employees in specific locations and writes the results in a csv file.
     @params {list, list, csv writer, str} the input csv lines containing the url to scrape, the xpaths where to find the data, the csv writer where we write our results, the path to the linkedin credentials.
     @returns {None}
     '''
+    # open a driver
     driver = openDriver()
+    # Retrieve credentials and connect to linkedin
+    credsPath = workFiles["credentials"]
     credentials = credsRetriever(credsPath)
     linkedinConnect(driver, credentials[0], credentials[1])
+    # Find the index of the column with your linkedin urls
+    columnIndex = workFiles["linkedinUrlColumnIndex"]
+    # Start to scrape
     res = []
     bugDetector = 0
     for i, elem in enumerate(dataToScrape):
         crawlerSleeper(i) # we sleep some time in order not to alarm linkedin
-        scraped = domainCrawler(driver, elem[1], xpaths)
+        scraped = domainCrawler(driver, elem[columnIndex], xpaths)
         bugDetector = incrementBugDetector(scraped[0], bugDetector)
         # If we encounter more than 3 links in a row that return an error we stop the crawling
         if bugDetector >= 3:
@@ -121,4 +127,4 @@ def mainCrawler(workFiles, batchSize, locations):
             else:
                 dataToScrape = dataSource[nbScraped:min(nbScraped + batchSize, nbToScrape)]
 
-            scrapedData = domainsCrawler(dataToScrape, xpaths, targetWriter, workFiles["credentials"])       
+            scrapedData = domainsCrawler(dataToScrape, xpaths, targetWriter, workFiles)       

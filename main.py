@@ -17,6 +17,7 @@ def main(workFiles, batchSize, locations):
 
 workFiles = {
     "source": "test.csv", # 👈 PUT THE NAME OF YOUR INPUT CSV FILE HERE 
+    "linkedinUrlColumnIndex": 1, # 👈 PUT THE INDEX OF THE COLUMN WITH THE LINKEDIN URLS IN YOUR INPUT CSV (INDEXES START AT 0)
     "credentials": "linkedinBastien.csv" # 👈 PUT THE NAME OF THE CSV FILE WITH YOUR CREDENTIALS HERE (YOU COULD BE USING MULTIPLE LINKEDIN ACCOUNTS)
 }
 
