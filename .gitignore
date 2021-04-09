@@ -1,2 +1,4 @@
 data
 credentials
+__pycache__
+.DS_Store
