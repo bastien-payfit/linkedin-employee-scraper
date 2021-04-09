@@ -3,10 +3,15 @@ import time
 
 
 def main(workFiles, batchSize, xpaths = ['//a[@data-control-name="visit_company_website"]/@href']):
+    '''
+    This function runs the whole scraping rutine to retrieve data from a series of linkedin urls. 
+    @params: {dict, int, list}, the dict with the name of the file with linkedin account credentials and the name of the file with input data, the size of each batch of urls to process at a time and the list of xpaths  where to find data
+    @returns: {None}
+    '''
     startTime = time.time()
     mainCrawler(workFiles, xpaths, batchSize)
     endTime = time.time()
-    print(f'Runtime: {endTime - startTime}')
+    print(f'Runtime: {endTime - startTime}') 
 
 workFiles = {
     "source": "gemeinsam1.csv",

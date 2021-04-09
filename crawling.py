@@ -83,7 +83,7 @@ def domainsCrawler(dataToScrape, xpaths, targetWriter, credsPath):
     for i, elem in enumerate(dataToScrape):
         crawlerSleeper(i) # we sleep some time in order not to alarm linkedin
         scraped = domainCrawler(driver, elem[1], xpaths)
-        incrementBugDetector(scraped[0], bugDetector)
+        bugDetector = incrementBugDetector(scraped[0], bugDetector)
         # If we encounter more than 3 links in a row that return an error we stop the crawling
         if bugDetector >= 3:
             print("We encountered multiple errors")

@@ -17,13 +17,24 @@ def sleepVeryLongTime():
     time.sleep(sleepTime)
 
 def crawlerSleeper(counter):
+    '''
+    Depending on a counter value (in our case the number of urls processed in one shot), we sleep for some time.
+    @params: {int}, the counter
+    @returns: {None}
+    '''
     if counter % 10 == 5:
         sleepLongTime()
     if counter % 100 == 0 and counter > 0:
         sleepVeryLongTime()
 
 def incrementBugDetector(scrapingRes, bugDetector):
+    '''
+    If the input evaluates to "error", then we increment the other input. The point being to raise a flag when the incremented value reaches a certain threshhold (but that happens elsewhere)
+    @params: {str, int} the value to evaluate, the value to increment depending on the case.
+    @returns {int} the incremented (or not) bugDetector
+    '''
     if scrapingRes == "error":
         bugDetector += 1
     else:
         bugDetector = 0
+    return bugDetector
