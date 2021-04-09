@@ -72,7 +72,7 @@ def domainCrawler(driver, url, xpaths):
 def domainsCrawler(dataToScrape, xpaths, targetWriter, workFiles):
     '''
     This function scrapes multiple linkedin urls to find the number of employees in specific locations and writes the results in a csv file.
-    @params {list, list, csv writer, str} the input csv lines containing the url to scrape, the xpaths where to find the data, the csv writer where we write our results, the path to the linkedin credentials.
+    @params {list, list, csv writer, dict} the input csv lines containing the url to scrape, the xpaths where to find the data, the csv writer where we write our results, the dictionnary with our workfiles info (including the file with credentials).
     @returns {None}
     '''
     # open a driver
@@ -101,7 +101,7 @@ def domainsCrawler(dataToScrape, xpaths, targetWriter, workFiles):
 def mainCrawler(workFiles, batchSize, locations):
     '''
     When launched, this function resumes the scraping where it stopped. We probably need to scrape a lot of urls but we can only scrape so much in one shot. That's why the scraping has to stop after a few and resume where it stopped afterwards, until the whole list has been scraped.
-    @params: {dict, list, int} the dictionnary with a path to the input csv file with urls to scrape and a path to the file with the linkedin credentials of the account to connect to, the list of xpaths where to get data on each linkedin page and the number of urls to visit in one shot. Last parameter was designed to not raise linkedin's awareness about our ongoing scraping.
+    @params: {dict, int, list} the dictionnary with a path to the input csv file with urls to scrape, the index of the column with linkedin urls, and a path to the file with the linkedin credentials of the account to connect to, the number of urls to visit in one shot and the list of xpaths where to get data on each linkedin page. 
     @returns {None}
     '''
     sourceFileName = workFiles["source"]

@@ -4,7 +4,7 @@ import time
 def main(workFiles, batchSize, locations):
     '''
     This function runs the whole scraping rutine to retrieve data from a series of linkedin urls. 
-    @params: {dict, int, list}, the dict with the name of the file with linkedin account credentials and the name of the file with input data, the size of each batch of urls to process at a time and the list of xpaths  where to find data
+    @params: {dict, int, list}, the dict with the name of the file with linkedin account credentials, the index of the column with linkedin urls and the name of the file with input data, the size of each batch of urls to process at a time and the list of xpaths  where to find data
     @returns: {None}
     '''
     startTime = time.time()
