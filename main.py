@@ -1,7 +1,6 @@
 from crawling import mainCrawler
 import time
 
-
 def main(workFiles, batchSize, locations):
     '''
     This function runs the whole scraping rutine to retrieve data from a series of linkedin urls. 
@@ -13,15 +12,23 @@ def main(workFiles, batchSize, locations):
     endTime = time.time()
     print(f'Runtime: {endTime - startTime}') 
 
-## PARAMETERS BELOW ##
+
+
+######################################################## PARAMETERS BELOW ########################################################
 
 workFiles = {
     "source": "test.csv", # 👈 PUT THE NAME OF YOUR INPUT CSV FILE HERE 
     "linkedinUrlColumnIndex": 1, # 👈 PUT THE INDEX OF THE COLUMN WITH THE LINKEDIN URLS IN YOUR INPUT CSV (INDEXES START AT 0)
     "credentials": "linkedinBastien.csv" # 👈 PUT THE NAME OF THE CSV FILE WITH YOUR CREDENTIALS HERE (YOU COULD BE USING MULTIPLE LINKEDIN ACCOUNTS)
 }
-
+batchSize = 10
 locations = ["Allemagne"] # 👈 PUT THE LOCATIONS WHERE YOU WANT TO FIND THE NUMBER OF EMPLOYEES. BEWARE! IF YOUR LINKEDIN ACCOUNT IS IN FRENCH YOU PUT 'ALLEMAGNE' IF IT'S IN ENGLISH YOU PUT 'GERMANY'
 
-main(workFiles, 1, locations)
+
+
+
+
+
+######################################################## CALL TO THE MAIN FUNCTION ########################################################
+main(workFiles, batchSize, locations)
 
