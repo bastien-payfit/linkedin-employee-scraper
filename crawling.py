@@ -92,7 +92,7 @@ def domainsCrawler(dataToScrape, xpaths, targetWriter, credsPath):
         targetWriter.writerow(elem + scraped)
 
 
-def mainCrawler(workFiles, xpaths, batchSize):
+def mainCrawler(workFiles, batchSize, locations):
     '''
     When launched, this function resumes the scraping where it stopped. We probably need to scrape a lot of urls but we can only scrape so much in one shot. That's why the scraping has to stop after a few and resume where it stopped afterwards, until the whole list has been scraped.
     @params: {dict, list, int} the dictionnary with a path to the input csv file with urls to scrape and a path to the file with the linkedin credentials of the account to connect to, the list of xpaths where to get data on each linkedin page and the number of urls to visit in one shot. Last parameter was designed to not raise linkedin's awareness about our ongoing scraping.
@@ -103,6 +103,12 @@ def mainCrawler(workFiles, xpaths, batchSize):
     dataSource, targetData = openCSV(sourceFileName, targetFileName) 
     nbToScrape = len(dataSource) 
     nbScraped = len(targetData)
+    # We reconstitute the xpaths according to the set of locations we're interested in, starting with 'worlwide' and the total number of employees
+    nbLocations = len(locations)
+    xpaths = ['//*[@id="main"]/div[2]/div/div[1]/div[1]/span/text()']
+    for i in range(nbLocations):
+        xpaths.append(f'//span[@class="org-people-bar-graph-element__category" and contains(text(), "{locations[i]}")]/preceding-sibling::strong/text()')
+    locations = ['global'] + locations
 
     if nbToScrape == nbScraped:
         print("Everything's already been scraped")
@@ -110,7 +116,7 @@ def mainCrawler(workFiles, xpaths, batchSize):
         with open("./data/" + targetFileName, "a", newline= '') as f1:
             targetWriter = csv.writer(f1)
             if nbScraped == 0:
-                targetWriter.writerow(dataSource[0] + len(xpaths)*["column"])
+                targetWriter.writerow(dataSource[0] + [location.lower() + 'Headcount' for location in locations])
                 dataToScrape = dataSource[1:min(1 + batchSize, nbToScrape)]
             else:
                 dataToScrape = dataSource[nbScraped:min(nbScraped + batchSize, nbToScrape)]

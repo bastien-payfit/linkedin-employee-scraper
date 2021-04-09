@@ -9,13 +9,7 @@ def main(workFiles, batchSize, locations):
     @returns: {None}
     '''
     startTime = time.time()
-    # We reconstitute the xpaths according to the set of locations we're interested in, starting with 'worlwide' and the total number of employees
-    nbLocations = len(locations)
-    xpaths = ['//*[@id="main"]/div[2]/div/div[1]/div[1]/span/text()']
-    for i in range(nbLocations):
-        xpaths.append(f'//span[@class="org-people-bar-graph-element__category" and contains(text(), "{locations[i]}")]/preceding-sibling::strong/text()')
-    locations = ["totalHeadcount"] + locations
-    mainCrawler(workFiles, xpaths, batchSize)
+    mainCrawler(workFiles, batchSize, locations)
     endTime = time.time()
     print(f'Runtime: {endTime - startTime}') 
 
@@ -26,5 +20,7 @@ workFiles = {
     "credentials": "linkedinBastien.csv" # 👈 PUT THE NAME OF THE CSV FILE WITH YOUR CREDENTIALS HERE (YOU COULD BE USING MULTIPLE LINKEDIN ACCOUNTS)
 }
 
-main(workFiles, 1, ["Allemagne"])
+locations = ["Allemagne"] # 👈 PUT THE LOCATIONS WHERE YOU WANT TO FIND THE NUMBER OF EMPLOYEES. BEWARE! IF YOUR LINKEDIN ACCOUNT IS IN FRENCH YOU PUT 'ALLEMAGNE' IF IT'S IN ENGLISH YOU PUT 'GERMANY'
+
+main(workFiles, 1, locations)
 
