@@ -14,7 +14,7 @@ def main(workFiles, batchSize, locations):
 
 
 
-######################################################## PARAMETERS BELOW ########################################################
+######################################################## PARAMETERS BELOW #########################################################
 
 workFiles = {
     "source": "test.csv", # 👈 PUT THE NAME OF YOUR INPUT CSV FILE HERE 

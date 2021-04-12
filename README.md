@@ -71,8 +71,8 @@ Finally, you need a list of linkedin urls to scrape.
     conversionmedia GmbH & Co KG,https://zw.linkedin.com/company/conversionmedia-gmbh-&-co.-kg/people</br>
     launchlabs GmbH,https://za.linkedin.com/company/launchlabs-berlin/people</br>
     Company Coaching,https://www.linkedin.com/showcase/all-company-coaching/people</br>
-    ZentralWeb GmbH,https://www.linkedin.com/company/zentralweb-gmbh//people</br>
-    Zenjob GmbH,https://www.linkedin.com/company/zenjob//people
+    ZentralWeb GmbH,https://www.linkedin.com/company/zentralweb-gmbh/people</br>
+    Zenjob GmbH,https://www.linkedin.com/company/zenjob/people
 
 
 
