@@ -5,7 +5,7 @@ import csv
 from fileInteractions import *
 
 # Open driver
-def openDriver(driverPath = '/Users/bastienvelitchkine/Documents/Code/chromedriver'):
+def openDriver(driverPath = '/Users/bastienvelitchkine/Documents/Code/chromedriver'): # PUT THE LOCATION OF THE CHROME DRIVER RIGHT HERE
     '''
     This function opens a driver with selenium and chrome driver. You can see selenium as a puppeteer and chromedriver as the puppet. What happens is the puppeteer tied links between its hands and the puppet.
     @params: {str} the path to chromedriver on your machine
