@@ -91,13 +91,3 @@ To scrape a whole batch, switch back to the terminal and type "python3 main.py".
 If you have a total of 200 companies to scrape, you'll have to run this command 20 times for instance (one of the downsides of this scraper 🤷🏻‍♂️)
 > **WARNING!** Wait a bit before you rerun the command, otherwise it's useless.
 
-</br>
-
-___
-
-</br>
-
-**THAT'S IT! READY TO SCRAPE!**
-
-![That's it you're ready to scrape](https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif)
-
