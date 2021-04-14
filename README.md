@@ -76,7 +76,7 @@ Finally, you need a list of linkedin urls to scrape.
 
 
 
-# IV. Scrape 🚀
+# IV. Scrape it! 🚀
 ## A. Final setup
 This is the part of the setup that changes before every new scrape.
 1. Open *main.py* and navigate to the "PARAMETERS BELOW" section of the file.
