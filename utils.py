@@ -24,8 +24,10 @@ def crawlerSleeper(counter):
     '''
     if counter % 10 == 5:
         sleepLongTime()
-    if counter % 100 == 0 and counter > 0:
+    elif counter % 20 == 0 and counter > 0:
         sleepVeryLongTime()
+    else:
+        sleepShortTime()
 
 def incrementBugDetector(scrapingRes, bugDetector):
     '''
