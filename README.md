@@ -94,7 +94,7 @@ If you have a total of 200 companies to scrape, you'll probably have to run this
 # V. Contributions
 ## 1. Contributors 💪
 - [Bastien Velitchkine](https://www.linkedin.com/in/bastienvelitchkine) - Growth Intern @PayFit - Student @CentraleSupélec
-- [Gauvain Thery]() - Growth Accelerator @PayFit
+- [Gauvain Thery](https://www.linkedin.com/in/gauvain-thery/) - Growth Accelerator @PayFit
 - The Next Contributor - Job Title @SuperCoolCompany 🙃
 ## 2. You want to join? 🤝 
 However useful, this piece of code is a draft and there's a lot of room for improvement.
