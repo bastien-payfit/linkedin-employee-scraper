@@ -57,7 +57,7 @@ There are a few things you need to do before the code can indeed help you find t
 As stated above, you need a linkedin account to surf multiple linkedin companies.
 1. Create a folder *credentials* in *linkedin-employee-scraper* (you can do that from VS Code),
 2. Create a csv file inside with your credentials in it. Just like that:
-    > your@email.com, you_password
+    > your@email.com, your_password
 3. **Write down the name of this newly created file**, you'll need it later.
 ## C. Input Data
 Finally, you need a list of linkedin urls to scrape.
@@ -88,6 +88,18 @@ This is the part of the setup that changes before every new scrape.
 4. Put a set of **locations** from which you want to know the number of employees. For instance `["France", "Allemagne"]`. Beware, the name of the countries should be their names in the language of the  linkedin account you're using.
 ## B. Scrape!
 To scrape a whole batch, switch back to the terminal and type "python3 main.py".
-If you have a total of 200 companies to scrape, you'll have to run this command 20 times for instance (one of the downsides of this scraper 🤷🏻‍♂️)
+If you have a total of 200 companies to scrape, you'll probably have to run this command multiple times (one of the downsides of this scraper 🤷🏻‍♂️)
 > **WARNING!** Wait a bit before you rerun the command, otherwise it's useless.
 
+# V. Contributions
+## 1. Contributors 💪
+- [Bastien Velitchkine](https://www.linkedin.com/in/bastienvelitchkine) - Growth Intern @PayFit - Student @CentraleSupélec
+- [Gauvain Thery]() - Growth Accelerator @PayFit
+- The Next Contributor - Job Title @SuperCoolCompany 🙃
+## 2. You want to join? 🤝 
+However useful, this piece of code is a draft and there's a lot of room for improvement.
+
+Therefore, we'd be more than happy to welcome contributors outside of PayFit. _If you want to join or just challenge the code_:
+___
+🚀 **REACH OUT TO [BASTIEN ON LINKEDIN](https://www.linkedin.com/in/bastienvelitchkine/)** 🚀
+___
